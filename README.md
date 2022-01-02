@@ -37,9 +37,14 @@ Type https://github.com/MutuaFranklin/webServer and press Enter to create your l
 ```
 
 ```
-Open webServer, the cloned Repo in terminal and run :python webserver.py to launch the app
+Open webServer, the cloned Repo in terminal and run :python webserver1.py to launch using socketserver.TCPServer and python webserver2.py to launch using HTTPServer
 
 
 ```
+
+### BDD
+- serve both static HTML and dynamically generated HTML 
+- support only a restricted subset of HTTP, such as GET or POST requests
+- only headers it must support are Content-Type and Content-Length.
 
 
