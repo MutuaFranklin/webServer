@@ -15,7 +15,8 @@ A web server that can support only a restricted subset of HTTP, such as GET or P
 
 
 ## Technologies Used
-- Python 
+- Python
+- OpenSSL 
 
 ### Installing
 
