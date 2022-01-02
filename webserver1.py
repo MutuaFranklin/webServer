@@ -1,6 +1,7 @@
 import http.server
 import socketserver
 import cgi
+import ssl
 
 stackList = ['Microsoft Azure DevOps', 'Rust programming','OWASP Security Framework']
 
@@ -62,11 +63,14 @@ class_object = MyHttpRequestHandler
 
 def main():
     hostName = "localhost"
-    serverPort = 8080
+    serverPort = 8000
     server = socketserver.TCPServer((hostName, serverPort), class_object)
+    server.socket = ssl.wrap_socket (server.socket, keyfile="key.pem", certfile='cert.pem', server_side=True, ssl_version=ssl.PROTOCOL_TLS)
     print("Server started http://%s:%s" % (hostName, serverPort))
+
     try:
         server.serve_forever()
+
     except KeyboardInterrupt:
         pass
 

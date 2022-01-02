@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import cgi
+import ssl
 
 stackList = ['Microsoft Azure DevOps', 'Rust programming','OWASP Security Framework']
 class Server(BaseHTTPRequestHandler):
@@ -58,6 +59,9 @@ def main():
     hostName = "localhost"
     serverPort = 8080
     webServer = HTTPServer((hostName, serverPort), Server)
+    webServer.socket = ssl.wrap_socket (webServer.socket, 
+        keyfile="key.pem", 
+        certfile='cert.pem', server_side=True)
     print("Server started http://%s:%s" % (hostName, serverPort))
     try:
         webServer.serve_forever()

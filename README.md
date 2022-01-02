@@ -35,9 +35,13 @@ Open Terminal. Change the current working directory to the location where you wa
 Type https://github.com/MutuaFranklin/webServer and press Enter to create your local clone.
 
 ```
+```
+Run 'openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365' command in your terminal to generate key and cert files with OpenSSL
 
 ```
-Open webServer, the cloned Repo in terminal and run :python webserver1.py to launch using socketserver.TCPServer and python webserver2.py to launch using HTTPServer
+
+```
+Open webServer, the cloned Repo in terminal and run :python webserver1.py  and enter PEM pass phrase to launch using socketserver.TCPServer and python webserver2.py to launch using HTTPServer
 
 
 ```
