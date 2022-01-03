@@ -5,7 +5,7 @@ import ssl
 
 stackList = ['Microsoft Azure DevOps', 'Rust programming','OWASP Security Framework']
 
-class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
+class ServerRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path.endswith('/'):
             self.send_response(200)
@@ -57,7 +57,7 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
 
 
-class_object = MyHttpRequestHandler
+class_object = ServerRequestHandler
 
 
 
